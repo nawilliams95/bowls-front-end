@@ -59,7 +59,7 @@ export default function NavBar(props) {
     return (
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-                <a href="#">
+                <a href="/home">
                     <img id="nav-logo" src="https://i.imgur.com/0Z61aZV.png"
                         style={{ width: '250px' }}
                     />

@@ -1,6 +1,6 @@
 import React from "react";
 
-function LogInForm(props) {
+export default function LogInForm(props) {
   return (
     <div>
       <h2>Log In</h2>
@@ -20,4 +20,4 @@ function LogInForm(props) {
   );
 }
 
-export default LogInForm;
+

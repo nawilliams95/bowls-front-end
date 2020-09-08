@@ -1,13 +1,8 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
-const Layout = require('./components/Layout/Layout.jsx');
+import React from 'react';
 
-const React = require('react');
 
-class Home extends React.Component {
-    render() {
-    // const product = this.props.product
-      return (
+export default function Home (props) {
+        return (
         <div>
             <div className="slogan is-family-primary has-text-centered has-text-weight-bold" style={{fontSize: '20px', marginBottom: '30'}}>
                 <h1>
@@ -52,6 +47,5 @@ class Home extends React.Component {
         </div>  
         );
     }
-}
 
-export default Home;
+

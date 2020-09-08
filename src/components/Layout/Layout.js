@@ -18,7 +18,7 @@ export default function Layout(props) {
             <footer>
                     <div class="content has-text-centered">
                         <p style={{marginBottom: '30px'}}>
-                            <a href="#">A Better Bowl for a Better Day&trade;</a> 
+                            <a href="/home">A Better Bowl for a Better Day&trade;</a> 
                         </p>
                     </div>
                 </footer>

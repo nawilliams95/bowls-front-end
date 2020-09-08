@@ -8,70 +8,71 @@ import "./css/App.css";
 import SignUpForm from './components/SignUpForm/SignUpForm';
 import LogInForm from './components/LogInForm/LogInForm';
 import LogOut from './components/LogOut/LogOut';
+import Home from './components/Home/Home';
 
 
 export default function App(props) {
 
   const [state, setState] = useState({
-		email: '',
-		password: '',
-		isLogginIn: false
-	});
-	const [isLoggedIn, setIsLoggedIn] = useState(false);
+    email: '',
+    password: '',
+    isLogginIn: false
+  });
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-	useEffect(() => {
-		if (localStorage.token) {
-			setIsLoggedIn(true);
-		} else {
-			setIsLoggedIn(false);
-		}
-	}, [isLoggedIn]);
+  useEffect(() => {
+    if (localStorage.token) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, [isLoggedIn]);
 
-	const handleLogOut = () => {
-		setState({
-			email: '',
-			password: '',
-			isLoggedIn: false
-		});
-		localStorage.clear();
-	};
+  const handleLogOut = () => {
+    setState({
+      email: '',
+      password: '',
+      isLoggedIn: false
+    });
+    localStorage.clear();
+  };
 
-	const handleInput = event => {
-		setState({ ...state, [event.target.name]: event.target.value });
-	};
+  const handleInput = event => {
+    setState({ ...state, [event.target.name]: event.target.value });
+  };
 
-	const handleSignUp = async event => {
-		event.preventDefault();
-		try {
-			const response = await axios.post('http://localhost:8000/users/signup', {
-				email: state.email,
-				password: state.password
-			});
-			console.log(response);
-			localStorage.token = response.data.token;
-			setIsLoggedIn(true);
-		} catch (err) {
-			console.log(err);
-		}
-	};
+  const handleSignUp = async event => {
+    event.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:8000/users/signup', {
+        email: state.email,
+        password: state.password
+      });
+      console.log(response);
+      localStorage.token = response.data.token;
+      setIsLoggedIn(true);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-	const handleLogIn = async event => {
-		event.preventDefault();
-		try {
-			const response = await axios.post('http://localhost:8000/users/login', {
-				email: state.email,
-				password: state.password
-			});
-			localStorage.token = response.data.token;
-			setIsLoggedIn(true);
-		} catch (error) {
-			console.log(error);
-		}
-	};
-  
+  const handleLogIn = async event => {
+    event.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:8000/users/login', {
+        email: state.email,
+        password: state.password
+      });
+      localStorage.token = response.data.token;
+      setIsLoggedIn(true);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
-      <Layout isLoggedIn={isLoggedIn}>
-        <div className="body">
+    <Layout isLoggedIn={isLoggedIn}>
+      <div className="body">
         <Switch>
           <Route
             path="/signup"
@@ -105,9 +106,15 @@ export default function App(props) {
               );
             }}
           />
+          <Route
+            path="/home"
+            render={(props) => {
+              return <Home />;
+            }}
+          />
         </Switch>
       </div>
-      </Layout>
+    </Layout>
   );
 }
 

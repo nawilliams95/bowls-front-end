@@ -1,6 +1,6 @@
 import React from "react";
 
-function LogOut(props) {
+export default function LogOut(props) {
   return (
     <div>
       <h2>Log Out</h2>
@@ -12,4 +12,4 @@ function LogOut(props) {
   );
 }
 
-export default LogOut;
+
