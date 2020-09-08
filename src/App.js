@@ -1,13 +1,22 @@
 import React from 'react';
 import './css/App.css';
 import Layout from './components/Layout/Layout.jsx';
+import Home from './components/Home/Home.js'
 import "./css/App.css";
+import Route from "react-router-dom/Route";
 
 const App = () => {
   
   return (
       <Layout>
-        <h1>Better Bowl</h1>
+        <div className="body">
+          <Route
+            path="/"
+            render={(props) => {
+              return <Home />;
+            }}
+          />
+        </div>
       </Layout>
   );
 }

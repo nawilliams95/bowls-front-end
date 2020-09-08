@@ -12,7 +12,7 @@ class Layout extends React.Component {
                     <link rel="stylesheet" href="./components/Layout/Layout.css"/>
                 </head>
                 <header>
-                    <nav class="navbar" role="navigation" aria-label="main navigation">
+                    <nav class="navbar is-family-primary has-text-weight-semibold" role="navigation" aria-label="main navigation">
                         <div class="navbar-brand">
                             <a href="#">
                                 <img id="nav-logo" src="https://i.imgur.com/0Z61aZV.png"
@@ -69,7 +69,11 @@ class Layout extends React.Component {
                     {this.props.children}
                 </body>
                 <footer>
-
+                    <div class="content has-text-centered">
+                        <p style={{marginBottom: '30px'}}>
+                            <a href="#">A Better Bowl for a Better Day&trade;</a> 
+                        </p>
+                    </div>
                 </footer>
             </html>
         );
