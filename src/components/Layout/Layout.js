@@ -16,8 +16,12 @@ export default function Layout(props) {
                 {props.children}
             </body>
             <footer>
-
-            </footer>
+                    <div class="content has-text-centered">
+                        <p style={{marginBottom: '30px'}}>
+                            <a href="#">A Better Bowl for a Better Day&trade;</a> 
+                        </p>
+                    </div>
+                </footer>
         </html>
     );
 }
