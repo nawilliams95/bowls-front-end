@@ -1,0 +1,18 @@
+nav li {
+    display: inline-block;
+    margin: 0 20px 0 20px;
+    width: 100px;
+  }
+.about {
+    left: 50px;
+}
+.contact {
+    left: 10px;
+}
+.auth {
+    left: 600px;
+  }
+  
+nav ul {
+    margin: 0px;
+  }
