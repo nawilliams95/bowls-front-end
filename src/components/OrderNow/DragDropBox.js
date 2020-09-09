@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import shortid from 'shortid';
 import DropTarget from './DropTarget';
-// import BoxItem from './BoxItem';
+import BoxItem from './BoxItem';
 
 export default function DragDropBox(props) {
 
