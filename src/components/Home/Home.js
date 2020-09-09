@@ -9,36 +9,36 @@ export default function Home (props) {
                   How to Build a Better Bowl:
                 </h1>
                 <div class="tile is-ancestor" style={{justifyContent: 'space-around', margin: '30px 40px 20px 40px'}}>
-                    <article class="tile is-child box is-3">
+                    <article class="tile is-child box is-3" style={{backgroundColor: '#f5d2b1'}}>
                     <p class="subtitle">First, Choose a <strong>Base</strong>:</p>
                     <figure class="image is-4by3">
-                        <img src="https://i.imgur.com/Bz34tHp.jpg" style={{width: '75%', height: 'auto', marginLeft: '30px'}}/>
+                        <img src="https://i.imgur.com/Bz34tHp.jpg" style={{width: '75%', height: 'auto', marginLeft: '37px', borderRadius: '5%'}}/>
                     </figure>
                     </article>
-                    <article class="tile is-child box is-3">
+                    <article class="tile is-child box is-3" style={{backgroundColor: '#cfd3d4'}}>
                     <p class="subtitle">Second, Choose a <strong>Protein</strong>:</p>
                     <figure class="image is-4by3">
-                        <img src="https://i.imgur.com/OPGvzKD.jpg" style={{width: '75%', height: 'auto', marginLeft: '30px'}}/>
+                        <img src="https://i.imgur.com/OPGvzKD.jpg" style={{width: '75%', height: 'auto', marginLeft: '37px', borderRadius: '5%'}}/>
                     </figure>
                     </article>
-                    <article class="tile is-child box is-3">
+                    <article class="tile is-child box is-3" style={{backgroundColor: '#cad4c9'}}>
                     <p class="subtitle">Third, Choose two <strong>Sides</strong>:</p>
                     <figure class="image is-4by3">
-                        <img src="https://i.imgur.com/U4Ulrbp.jpg" style={{width: '75%', height: 'auto', marginLeft: '30px'}}/>
+                        <img src="https://i.imgur.com/U4Ulrbp.jpg" style={{width: '75%', height: 'auto', marginLeft: '37px', borderRadius: '5%'}}/>
                     </figure>
                     </article>
                 </div>
                 <div class="tile is-ancestor" style={{justifyContent: 'space-around', margin: '30px 150px 80px 150px'}}>
-                <article class="tile is-child box is-4">
+                <article class="tile is-child box is-4" style={{backgroundColor: '#f3e7c1'}}>
                     <p class="subtitle">Fourth, Choose a <strong>Topping</strong>:</p>
                     <figure class="image is-4by3">
-                        <img src="https://i.imgur.com/RRp17ye.jpg" style={{width: '75%', height: 'auto', marginLeft: '30px'}}/>
+                        <img src="https://i.imgur.com/RRp17ye.jpg" style={{width: '75%', height: 'auto', marginLeft: '37px', borderRadius: '5%'}}/>
                     </figure>
                     </article>
-                    <article class="tile is-child box is-4">
-                    <p class="subtitle">Lastly, Drizzle One of Our <strong>Sauces</strong> on Top and Enjoy:</p>
+                    <article class="tile is-child box is-4" style={{backgroundColor: '#eca9a4'}}>
+                    <p class="subtitle">Lastly, Choose a <strong>Sauce</strong> and Enjoy:</p>
                     <figure class="image is-4by3">
-                        <img src="https://i.imgur.com/Zqu8tkq.jpg" style={{width: '75%', height: 'auto', marginLeft: '30px'}}/>
+                        <img src="https://i.imgur.com/Zqu8tkq.jpg" style={{width: '72%', height: 'auto', marginLeft: '50px', borderRadius: '5%', marginTop: '10px'}}/>
                     </figure>
                     </article>
                 </div>

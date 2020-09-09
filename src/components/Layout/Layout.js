@@ -18,7 +18,7 @@ export default function Layout(props) {
             </body>
             <footer>
                     <div class="content has-text-centered">
-                        <p style={{marginBottom: '30px'}}>
+                        <p style={{marginBottom: '30px', marginTop: '-25px'}}>
                             <a href="/home">A Better Bowl for a Better Day&trade;</a> 
                         </p>
                     </div>
