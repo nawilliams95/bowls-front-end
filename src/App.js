@@ -9,6 +9,7 @@ import SignUpForm from './components/SignUpForm/SignUpForm';
 import LogInForm from './components/LogInForm/LogInForm';
 import LogOut from './components/LogOut/LogOut';
 import Home from './components/Home/Home';
+import NavBar from './components/NavBar/NavBar';
 
 
 export default function App(props) {
@@ -19,6 +20,8 @@ export default function App(props) {
     isLogginIn: false
   });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [input, updateInput] = useState({});
+
 
   useEffect(() => {
     if (localStorage.token) {
@@ -46,11 +49,16 @@ export default function App(props) {
     try {
       const response = await axios.post('http://localhost:8000/users/signup', {
         email: state.email,
-        password: state.password
+        password: state.password,
+        firstName: state.firstName,
+        lastName: state.lastName,
+        nickname: state.nickname,
+        birthday: state.birthday,
+
       });
       console.log(response);
       localStorage.token = response.data.token;
-      setIsLoggedIn(true);
+      setIsLoggedIn("true");
     } catch (err) {
       console.log(err);
     }
@@ -64,6 +72,7 @@ export default function App(props) {
         password: state.password
       });
       localStorage.token = response.data.token;
+      // localStorage.setItem()
       setIsLoggedIn(true);
     } catch (error) {
       console.log(error);
@@ -72,6 +81,7 @@ export default function App(props) {
 
   return (
     <Layout isLoggedIn={isLoggedIn}>
+      <NavBar isLoggedIn={isLoggedIn} />
       <div className="body">
         <Switch>
           <Route

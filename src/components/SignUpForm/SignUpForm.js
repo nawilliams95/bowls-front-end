@@ -8,28 +8,28 @@ export default function SignUpForm(props) {
       <form>
       <div>
           <label htmlFor="firstName">First Name</label>
-          <input type="text" name="firstName" required onChange={props.handleInput} />
+          <input type="text" name="firstName" id="firstName"  onChange={props.handleInput} />
         </div>
         <div>
           <label htmlFor="lastName">Last Name</label>
-          <input type="text" name="lastName" required onChange={props.handleInput} />
+          <input type="text" name="lastName" id="lastName" onChange={props.handleInput} />
         </div>
         <div>
           <label htmlFor="nickname">Nickname</label>
-          <input type="text" name="nickname" onChange={props.handleInput} />
+          <input type="text" name="nickname" id="nickname" onChange={props.handleInput} />
         </div>
         <div>
           <label htmlFor="birthday">Birthday</label>
-          <input type="date" name="birthday" onChange={props.handleInput} />
+          <input type="date" name="birthday" id="birthday" onChange={props.handleInput} />
         </div>
         <div>
           <label htmlFor="email">Email</label>
-          <input type="text" name="email" required onChange={props.handleInput} />
+          <input type="text" name="email" id="email"  onChange={props.handleInput} />
         </div>
 
         <div>
           <label htmlFor="password">Password</label>
-          <input type="password" name="password" required onChange={props.handleInput} />
+          <input type="password" name="password" id="password" onChange={props.handleInput} />
         </div>
         <input value="Submit" type="submit" onClick={props.handleSignUp} />
       </form>
