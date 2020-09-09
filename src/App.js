@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 import './css/App.css';
@@ -14,13 +14,21 @@ import NavBar from './components/NavBar/NavBar';
 
 export default function App(props) {
 
+  let history = useHistory();
+
   const [state, setState] = useState({
     email: '',
     password: '',
     isLogginIn: false
   });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [input, updateInput] = useState({});
+  // const [input, updateInput] = useState({
+  //   firstName: '',
+  //   email: '',
+  //   password: '',
+  //   confirm_password: ''
+  // });
+  // const [errors, updateErrors] = useState({});
 
 
   useEffect(() => {
@@ -33,19 +41,69 @@ export default function App(props) {
 
   const handleLogOut = () => {
     setState({
+
       email: '',
       password: '',
       isLoggedIn: false
     });
+    history.push('/home');
     localStorage.clear();
   };
 
   const handleInput = event => {
     setState({ ...state, [event.target.name]: event.target.value });
+    // updateInput({ ...input, [event.target.name]: event.target.value });
   };
+// const validate = () => {
+//       let isValid = true;
+
+//       if (!input.firstName) {
+//         isValid = false;
+//         errors.firstName = "Please enter your name.";
+//       }
+
+//       if (!input.email) {
+//         isValid = false;
+//         errors.email = "Please enter your email Address.";
+//       }
+
+//       if (typeof input.email !== "undefined") {
+
+//         let pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+//         if (!pattern.test(input.email)) {
+//           isValid = false;
+//           errors.email = "Please enter valid email address.";
+//         }
+//       }
+
+//       if (!input.password) {
+//         isValid = false;
+//         errors.password = "Please enter your password.";
+//       }
+
+//       if (!input.confirm_password) {
+//         isValid = false;
+//         errors.confirm_password = "Please enter your confirm password.";
+//       }
+
+//       if (typeof input.password !== "undefined" && typeof input.confirm_password !== "undefined") {
+
+//         if (input.password != input.confirm_password) {
+//           isValid = false;
+//           errors.password = "Passwords don't match.";
+//         }
+//       }
+
+//       updateErrors({
+//         errors: errors
+//       });
+
+//       return isValid;
+//     };
 
   const handleSignUp = async event => {
     event.preventDefault();
+    // validate();
     try {
       const response = await axios.post('http://localhost:8000/users/signup', {
         email: state.email,
@@ -59,6 +117,7 @@ export default function App(props) {
       console.log(response);
       localStorage.token = response.data.token;
       setIsLoggedIn("true");
+      history.push('/home');
     } catch (err) {
       console.log(err);
     }
@@ -72,8 +131,9 @@ export default function App(props) {
         password: state.password
       });
       localStorage.token = response.data.token;
-      // localStorage.setItem()
+      response.data.currentUser = localStorage.setItem('user', JSON.stringify(response.data.currentUser));
       setIsLoggedIn(true);
+      history.push('/home');
     } catch (error) {
       console.log(error);
     }
@@ -81,7 +141,7 @@ export default function App(props) {
 
   return (
     <Layout isLoggedIn={isLoggedIn}>
-      <NavBar isLoggedIn={isLoggedIn} />
+      <NavBar isLoggedIn={isLoggedIn} handleLogOut={handleLogOut} />
       <div className="body">
         <Switch>
           <Route
@@ -92,6 +152,7 @@ export default function App(props) {
                   isLoggedIn={isLoggedIn}
                   handleInput={handleInput}
                   handleSignUp={handleSignUp}
+                  // errors={errors}
                 />
               );
             }}

@@ -10,9 +10,11 @@ export default function SignUpForm(props) {
           <label htmlFor="firstName">First Name</label>
           <input type="text" name="firstName" id="firstName"  onChange={props.handleInput} />
         </div>
+        
         <div>
           <label htmlFor="lastName">Last Name</label>
-          <input type="text" name="lastName" id="lastName" onChange={props.handleInput} />
+          <input type="text" name="lastName" id="lastName"  onChange={props.handleInput} />
+          {/* <div className="text-danger">{props.errors.firstName}</div> */}
         </div>
         <div>
           <label htmlFor="nickname">Nickname</label>
@@ -25,11 +27,18 @@ export default function SignUpForm(props) {
         <div>
           <label htmlFor="email">Email</label>
           <input type="text" name="email" id="email"  onChange={props.handleInput} />
+          {/* <div className="text-danger">{props.errors.email}</div> */}
         </div>
 
         <div>
           <label htmlFor="password">Password</label>
-          <input type="password" name="password" id="password" onChange={props.handleInput} />
+          <input type="password" name="password" id="password"  onChange={props.handleInput} />
+          {/* <div className="text-danger">{props.errors.password}</div> */}
+        </div>
+        <div>
+          <label htmlFor="confirm_password">Confirm Password</label>
+          <input type="confirm_password" name="confirm_password" id="confirm_password"  onChange={props.handleInput} />
+          {/* <div className="text-danger">{props.errors.confirm_password}</div> */}
         </div>
         <input value="Submit" type="submit" onClick={props.handleSignUp} />
       </form>

@@ -34,7 +34,7 @@ export default function NavBar(props) {
     if (props.isLoggedIn) {
         navBarItems.push(
             <li key={4}>
-                <LogOut />
+                <LogOut handleLogOut={props.handleLogOut} />
             </li>
         );
     } else {
