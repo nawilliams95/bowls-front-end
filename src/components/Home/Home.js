@@ -4,8 +4,8 @@ import React from 'react';
 export default function Home (props) {
         return (
         <div>
-            <div className="slogan is-family-primary has-text-centered has-text-weight-bold" style={{fontSize: '20px', marginBottom: '30'}}>
-                <h1>
+            <div className="slogan is-family-primary has-text-centered has-text-weight-bold" style={{fontSize: '25px', marginBottom: '30'}}>
+                <h1 style={{marginBottom: '30px', marginTop: '30px'}}>
                   How to Build a Better Bowl:
                 </h1>
                 <div class="container is-fluid" style={{width: '50%'}}>
@@ -41,7 +41,7 @@ export default function Home (props) {
                 <div class="notification">
                     Lastly, Drizzle One of Our <strong>Sauces</strong> on Top and Enjoy: 
                 </div>
-                    <img src="https://i.imgur.com/Zqu8tkq.jpg" style={{width: '150px'}}/>
+                    <img src="https://i.imgur.com/Zqu8tkq.jpg" style={{width: '125px', marginBottom: '30px'}}/>
                 </div>
             </div>
         </div>  

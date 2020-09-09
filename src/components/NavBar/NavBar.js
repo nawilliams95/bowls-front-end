@@ -17,7 +17,7 @@ export default function NavBar(props) {
         <li key={3}>
             <div class="navbar-item has-dropdown is-hoverable">
                 <a href="/order" class="navbar-link">
-                    Order Now
+                    Order
                 </a>
                 <div class="navbar-dropdown">
                     <a herf="/signiturebowls" class="navbar-item">
@@ -57,7 +57,7 @@ export default function NavBar(props) {
     }
 
     return (
-        <nav class="navbar" role="navigation" aria-label="main navigation">
+        <nav class="navbar" role="navigation" aria-label="main navigation" style={{width: '100%'}}>
             <div class="navbar-brand">
                 <a href="/home">
                     <img id="nav-logo" src="https://i.imgur.com/0Z61aZV.png"
