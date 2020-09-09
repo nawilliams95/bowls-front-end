@@ -60,7 +60,7 @@ export default function DragDropWrapper(props) {
     let yScroll = 0;
 
 
-    const componentDidMount = () => {
+    useEffect(() => {
         // set draggable attribute 'false' on any images, to prevent conflicts w browser native dragging
         const imgs = containerElem.getElementsByTagName('IMG');
         for (let i = 0; i < imgs.length; i += 1) {
@@ -80,11 +80,14 @@ export default function DragDropWrapper(props) {
             addListeners(containerElem);
             containerElem.style.cursor = 'move';
         }
-    }
+    }, []);
 
-    useEffect((componentWillUnmount) => {
-        _isMounted = false;
-    });
+    useEffect(() => {
+        console.log('component mounted')
+        return () => {
+            _isMounted = false;
+        }
+    }, []);
 
     addListeners = (elem) => {
         elem.addEventListener('mousedown', (e) => { handleMouseDown(e); }, false);
