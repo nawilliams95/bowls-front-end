@@ -32,7 +32,7 @@ export default function Home (props) {
                 <article class="tile is-child box is-4" style={{backgroundColor: '#f3e7c1'}}>
                     <p class="subtitle">Fourth, Choose a <strong>Topping</strong>:</p>
                     <figure class="image is-4by3">
-                        <img src="https://i.imgur.com/RRp17ye.jpg" style={{width: '75%', height: 'auto', marginLeft: '37px', borderRadius: '5%'}}/>
+                        <img src="https://i.imgur.com/RRp17ye.jpg" style={{width: '75%', height: 'auto', marginLeft: '40px', borderRadius: '5%'}}/>
                     </figure>
                     </article>
                     <article class="tile is-child box is-4" style={{backgroundColor: '#eca9a4'}}>
