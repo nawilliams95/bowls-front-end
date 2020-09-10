@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 import './css/App.css';
@@ -9,9 +9,16 @@ import SignUpForm from './components/SignUpForm/SignUpForm';
 import LogInForm from './components/LogInForm/LogInForm';
 import LogOut from './components/LogOut/LogOut';
 import Home from './components/Home/Home';
-
+import NavBar from './components/NavBar/NavBar';
+import CreateBowl from './components/OrderNow/CreateBowl';
+import OrderNow from './components/OrderNow/OrderNow';
+import AboutUs from './components/AboutUs/AboutUs';
+import ContactUs from './components/ContactUs/ContactUs';
+import ContactUsForm from './components/ContactUs/ContactUsForm';
 
 export default function App(props) {
+
+  let history = useHistory();
 
   const [state, setState] = useState({
     email: '',
@@ -19,6 +26,14 @@ export default function App(props) {
     isLogginIn: false
   });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [input, updateInput] = useState({
+  //   firstName: '',
+  //   email: '',
+  //   password: '',
+  //   confirm_password: ''
+  // });
+  // const [errors, updateErrors] = useState({});
+
 
   useEffect(() => {
     if (localStorage.token) {
@@ -30,27 +45,83 @@ export default function App(props) {
 
   const handleLogOut = () => {
     setState({
+
       email: '',
       password: '',
       isLoggedIn: false
     });
+    history.push('/home');
     localStorage.clear();
   };
 
   const handleInput = event => {
     setState({ ...state, [event.target.name]: event.target.value });
+    // updateInput({ ...input, [event.target.name]: event.target.value });
   };
+// const validate = () => {
+//       let isValid = true;
+
+//       if (!input.firstName) {
+//         isValid = false;
+//         errors.firstName = "Please enter your name.";
+//       }
+
+//       if (!input.email) {
+//         isValid = false;
+//         errors.email = "Please enter your email Address.";
+//       }
+
+//       if (typeof input.email !== "undefined") {
+
+//         let pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+//         if (!pattern.test(input.email)) {
+//           isValid = false;
+//           errors.email = "Please enter valid email address.";
+//         }
+//       }
+
+//       if (!input.password) {
+//         isValid = false;
+//         errors.password = "Please enter your password.";
+//       }
+
+//       if (!input.confirm_password) {
+//         isValid = false;
+//         errors.confirm_password = "Please enter your confirm password.";
+//       }
+
+//       if (typeof input.password !== "undefined" && typeof input.confirm_password !== "undefined") {
+
+//         if (input.password != input.confirm_password) {
+//           isValid = false;
+//           errors.password = "Passwords don't match.";
+//         }
+//       }
+
+//       updateErrors({
+//         errors: errors
+//       });
+
+//       return isValid;
+//     };
 
   const handleSignUp = async event => {
     event.preventDefault();
+    // validate();
     try {
       const response = await axios.post('http://localhost:8000/users/signup', {
         email: state.email,
-        password: state.password
+        password: state.password,
+        firstName: state.firstName,
+        lastName: state.lastName,
+        nickname: state.nickname,
+        birthday: state.birthday,
+
       });
       console.log(response);
       localStorage.token = response.data.token;
-      setIsLoggedIn(true);
+      setIsLoggedIn("true");
+      history.push('/home');
     } catch (err) {
       console.log(err);
     }
@@ -64,7 +135,9 @@ export default function App(props) {
         password: state.password
       });
       localStorage.token = response.data.token;
+      response.data.currentUser = localStorage.setItem('user', JSON.stringify(response.data.currentUser));
       setIsLoggedIn(true);
+      history.push('/home');
     } catch (error) {
       console.log(error);
     }
@@ -72,6 +145,7 @@ export default function App(props) {
 
   return (
     <Layout isLoggedIn={isLoggedIn}>
+      <NavBar isLoggedIn={isLoggedIn} handleLogOut={handleLogOut} />
       <div className="body">
         <Switch>
           <Route
@@ -82,6 +156,7 @@ export default function App(props) {
                   isLoggedIn={isLoggedIn}
                   handleInput={handleInput}
                   handleSignUp={handleSignUp}
+                  // errors={errors}
                 />
               );
             }}
@@ -112,6 +187,36 @@ export default function App(props) {
               return <Home />;
             }}
           />
+          <Route
+            path="/createbowl"
+            render={(props) => {
+              return <CreateBowl />;
+            }}
+          />
+          <Route
+            path="/ordernow"
+            render={(props) => {
+              return <OrderNow />;
+            }}
+          />
+          <Route
+           path="/about"
+            render={(props) => {
+              return <AboutUs />;
+            }}
+          />
+          <Route
+            path="/contact"
+            render={(props) => {
+              return <ContactUs />;
+            }}
+          />
+          <Route
+            path="/contactusform"
+            render={(props) => {
+              return <ContactUsForm />
+            }}
+            />
         </Switch>
       </div>
     </Layout>

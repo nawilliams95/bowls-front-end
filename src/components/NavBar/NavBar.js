@@ -5,26 +5,26 @@ import './NavBar.css';
 export default function NavBar(props) {
     let navBarItems = [
         <li key={1}>
-            <a href="/about" class="navbar-item about" style={{}}>
+            <a href="/about" className="navbar-item about" style={{}}>
                 About
             </a>
         </li>,
         <li key={2}>
-            <a href="/contact" class="navbar-item contact">
+            <a href="/contact" className="navbar-item contact">
                 Contact
             </a>
         </li>,
         <li key={3}>
             <div class="navbar-item has-dropdown is-hoverable">
-                <a href="/order" class="navbar-link">
-                    Order Now
+                <a href="/ordernow" class="navbar-link">
+                    Order
                 </a>
-                <div class="navbar-dropdown">
-                    <a herf="/signiturebowls" class="navbar-item">
+                <div className="navbar-dropdown">
+                    <a herf="/signiturebowls" className="navbar-item">
                         Signature Better Bowls
                     </a>
-                    <a href="create" class="navbar-item">
-                        Create A Better Bowl
+                    <a href="/createbowl" className="navbar-item">
+                        Custom Bowl Visualizer
                     </a>
                 </div>
             </div>
@@ -34,19 +34,19 @@ export default function NavBar(props) {
     if (props.isLoggedIn) {
         navBarItems.push(
             <li key={4}>
-                <LogOut />
+                <LogOut handleLogOut={props.handleLogOut} />
             </li>
         );
     } else {
         navBarItems.push(
             <li key={5}>
-                <div class="navbar-end">
-                    <div class="navbar-item auth">
-                        <div class="buttons">
-                            <a href="/signup" class="button is-info">
+                <div className="navbar-end">
+                    <div className="navbar-item auth">
+                        <div className="buttons">
+                            <a href="/signup" className="button is-info">
                                 <strong>Sign up</strong>
                             </a>
-                            <a href="/login" class="button is-light">
+                            <a href="/login" className="button is-light">
                                 Log in
                                 </a>
                         </div>
@@ -57,21 +57,21 @@ export default function NavBar(props) {
     }
 
     return (
-        <nav class="navbar" role="navigation" aria-label="main navigation">
+        <nav class="navbar" role="navigation" aria-label="main navigation" style={{width: '100%'}}>
             <div class="navbar-brand">
                 <a href="/home">
                     <img id="nav-logo" src="https://i.imgur.com/0Z61aZV.png"
-                        style={{ width: '250px' }}
+                        alt="" style={{ width: '250px' }}
                     />
                 </a>
-                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                 </a>
             </div>
-            <div id="navbarBasicExample" class="navbar-menu">
-                <div class="navbar-start">
+            <div id="navbarBasicExample" className="navbar-menu">
+                <div className="navbar-start">
                     <ul>{navBarItems}</ul>
                 </div>
             </div>
