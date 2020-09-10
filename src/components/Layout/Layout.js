@@ -3,25 +3,18 @@ import React from 'react';
 
 export default function Layout(props) {
     return (
-        
-<>
-       
-                <header>
-                    {/* <NavBar /> */}
-                </header>
-
-                <div>
-                    {props.children}
+        <>
+            <div>
+                {props.children}
+            </div>
+            <footer>
+                <div class="content has-text-centered">
+                    <p style={{ marginBottom: '30px', marginTop: '-25px' }}>
+                        <a href="/home">A Better Bowl for a Better Day&trade;</a>
+                    </p>
                 </div>
+            </footer>
 
-                <footer>
-                    <div className="content has-text-centered">
-                        <p style={{ marginBottom: '30px' }}>
-                            <a href="/home">A Better Bowl for a Better Day&trade;</a>
-                        </p>
-                    </div>
-                </footer>
-  
 
         </>
     );

@@ -15,9 +15,9 @@ export default function NavBar(props) {
             </a>
         </li>,
         <li key={3}>
-            <div className="navbar-item has-dropdown is-hoverable">
-                <a href="/ordernow" className="navbar-link">
-                    Order Now
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a href="/ordernow" class="navbar-link">
+                    Order
                 </a>
                 <div className="navbar-dropdown">
                     <a herf="/signiturebowls" className="navbar-item">
@@ -57,8 +57,8 @@ export default function NavBar(props) {
     }
 
     return (
-        <nav className="navbar" role="navigation" aria-label="main navigation">
-            <div className="navbar-brand">
+        <nav class="navbar" role="navigation" aria-label="main navigation" style={{width: '100%'}}>
+            <div class="navbar-brand">
                 <a href="/home">
                     <img id="nav-logo" src="https://i.imgur.com/0Z61aZV.png"
                         style={{ width: '250px' }}
