@@ -5,9 +5,9 @@ export default function Home (props) {
         return (
         <div>
             <div className="slogan is-family-primary has-text-centered has-text-weight-medium" style={{fontSize: '25px', marginBottom: '30'}}>
-                <h1 style={{marginBottom: '50px', marginTop: '20px'}}>
-                  How to Build a Better Bowl:
-                </h1>
+                <div class="notification" style={{marginLeft: '300px', marginRight: '300px'}}>
+                  <strong>How to Build a Better Bowl:</strong>
+                </div> 
                 <div class="tile is-ancestor" style={{justifyContent: 'space-around', margin: '30px 40px 20px 40px'}}>
                     <article class="tile is-child box is-3" style={{backgroundColor: '#f5d2b1'}}>
                     <p class="subtitle">First, Choose a <strong>Base</strong>:</p>

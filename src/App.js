@@ -9,6 +9,9 @@ import SignUpForm from './components/SignUpForm/SignUpForm';
 import LogInForm from './components/LogInForm/LogInForm';
 import LogOut from './components/LogOut/LogOut';
 import Home from './components/Home/Home';
+import AboutUs from './components/AboutUs/AboutUs';
+import ContactUs from './components/ContactUs/ContactUs';
+import ContactUsForm from './components/ContactUs/ContactUsForm';
 
 
 export default function App(props) {
@@ -110,6 +113,24 @@ export default function App(props) {
             path="/home"
             render={(props) => {
               return <Home />;
+            }}
+          />
+          <Route
+            path="/about"
+            render={(props) => {
+              return <AboutUs />;
+            }}
+          />
+          <Route
+            path="/contact"
+            render={(props) => {
+              return <ContactUs />;
+            }}
+          />
+          <Route
+            path="/contactusform"
+            render={(props) => {
+              return <ContactUsForm />;
             }}
           />
         </Switch>
