@@ -1,5 +1,4 @@
 import React from 'react';
-import shortid from 'shortid';
 import DragDropWrapper from './DragDropWrapper';
 
 /*
