@@ -29,7 +29,7 @@ export default class Box extends React.Component {
     kill = (uid) => {
       let items = this.state.items.slice();
       const index = items.findIndex((item) => {
-        return item.uid == uid
+        return item.uid === uid
       });
       if (index !== -1) {
         items.splice(index, 1);

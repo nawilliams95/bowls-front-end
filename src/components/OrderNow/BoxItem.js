@@ -9,9 +9,7 @@ import './BoxItem.css';
 
 export default class BoxItem extends React.Component {
     // the things that appear in the boxes
-    constructor(props) {
-      super(props);
-    }
+   
     
     handleDrop = (e) => {
       e.stopPropagation();

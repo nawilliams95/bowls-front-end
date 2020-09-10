@@ -7,34 +7,34 @@ export default function SignUpForm(props) {
 
       <form>
         <div class='field' style={{ width: '400px', display: 'block', margin: '0 auto' }}>
-          <label htmlFor="firstName" class='label' htmlFor="firstName">First Name</label>
+          <label htmlFor="firstName" class='label'>First Name</label>
           <input class='input' type="text" name="firstName" placeholder='Type Your First Name Here' required onChange={props.handleInput} />
         </div>
         {/* <div className="text-danger">{props.errors.firstName}</div> */}
         <div class='field' style={{ width: '400px', display: 'block', margin: '0 auto', marginTop: '20px' }}>
-          <label htmlFor="lastName" class='label' htmlFor="lastName">Last Name</label>
+          <label htmlFor="lastName" class='label'>Last Name</label>
           <input class='input' type="text" name="lastName" placeholder='Type Your Last Name Here' required onChange={props.handleInput} />
         </div>
         <div class='field' style={{ width: '400px', display: 'block', margin: '0 auto', marginTop: '20px' }}>
-          <label htmlFor="firstName" class='label' htmlFor="nickname">Nickname</label>
+          <label class='label' htmlFor="nickname">Nickname</label>
           <input class='input' type="text" name="nickname" placeholder='Type Your Nickname Here' required onChange={props.handleInput} />
         </div>
         <div class='field' style={{ width: '400px', display: 'block', margin: '0 auto', marginTop: '20px' }}>
-          <label htmlFor="birthday" class='label' htmlFor="birthday">Birthday</label>
+          <label htmlFor="birthday" class='label'>Birthday</label>
           <input class='input' type="date" name="birthday" required onChange={props.handleInput} />
         </div>
         <div class='field' style={{ width: '400px', display: 'block', margin: '0 auto', marginTop: '20px' }}>
-          <label htmlFor="email" class='label' htmlFor="email">Email</label>
+          <label htmlFor="email" class='label'>Email</label>
           <input class='input' type="email" name="email" placeholder='Type Your Email Here' required onChange={props.handleInput} />
         </div>
         {/* <div className="text-danger">{props.errors.email}</div> */}
         <div class='field' style={{ width: '400px', display: 'block', margin: '0 auto', marginTop: '20px' }}>
-          <label htmlFor="password" class='label' htmlFor="password">Password</label>
+          <label htmlFor="password" class='label'>Password</label>
           <input class='input' type="text" name="password" placeholder='Type Your Password Here' required onChange={props.handleInput} />
         </div>
         {/* <div className="text-danger">{props.errors.password}</div> */}
         <div class='field' style={{ width: '400px', display: 'block', margin: '0 auto', marginTop: '20px' }}>
-          <label htmlFor="confirm_password" class='label' htmlFor="confirm_password">Confirm Password</label>
+          <label htmlFor="confirm_password" class='label'>Confirm Password</label>
           <input class='input' type="text" name="confirm_password" placeholder='Type Your confirm_password Here' required onChange={props.handleInput} />
         </div>
         {/* <div className="text-danger">{props.errors.confirm_password}</div> */}

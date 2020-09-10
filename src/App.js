@@ -12,7 +12,9 @@ import Home from './components/Home/Home';
 import NavBar from './components/NavBar/NavBar';
 import CreateBowl from './components/OrderNow/CreateBowl';
 import OrderNow from './components/OrderNow/OrderNow';
-
+import AboutUs from './components/AboutUs/AboutUs';
+import ContactUs from './components/ContactUs/ContactUs';
+import ContactUsForm from './components/ContactUs/ContactUsForm';
 
 export default function App(props) {
 
@@ -197,6 +199,24 @@ export default function App(props) {
               return <OrderNow />;
             }}
           />
+          <Route
+           path="/about"
+            render={(props) => {
+              return <AboutUs />;
+            }}
+          />
+          <Route
+            path="/contact"
+            render={(props) => {
+              return <ContactUs />;
+            }}
+          />
+          <Route
+            path="/contactusform"
+            render={(props) => {
+              return <ContactUsForm />
+            }}
+            />
         </Switch>
       </div>
     </Layout>

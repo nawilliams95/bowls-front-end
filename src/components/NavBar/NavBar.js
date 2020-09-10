@@ -24,7 +24,7 @@ export default function NavBar(props) {
                         Signature Better Bowls
                     </a>
                     <a href="/createbowl" className="navbar-item">
-                        Create A Better Bowl
+                        Custom Bowl Visualizer
                     </a>
                 </div>
             </div>
@@ -61,7 +61,7 @@ export default function NavBar(props) {
             <div class="navbar-brand">
                 <a href="/home">
                     <img id="nav-logo" src="https://i.imgur.com/0Z61aZV.png"
-                        style={{ width: '250px' }}
+                        alt="" style={{ width: '250px' }}
                     />
                 </a>
                 <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">

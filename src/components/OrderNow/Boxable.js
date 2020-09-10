@@ -34,7 +34,7 @@ export default class Boxable extends React.Component {
         }} 
 
         >
-          <img src={this.props.image} height="45" style={{ marginLeft: 40 }} />
+          <img src={this.props.image} height="45" alt="" style={{ marginLeft: 40 }} />
         </DragDropWrapper>
       </div>
     );
