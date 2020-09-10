@@ -23,7 +23,7 @@ export default function NavBar(props) {
                     <a herf="/signiturebowls" className="navbar-item">
                         Signature Better Bowls
                     </a>
-                    <a href="create" className="navbar-item">
+                    <a href="/createbowl" className="navbar-item">
                         Create A Better Bowl
                     </a>
                 </div>

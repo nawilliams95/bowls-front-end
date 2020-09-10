@@ -1,5 +1,5 @@
 import React from 'react';
-import DragDropWrapper from './DragDropWrapper';
+import DragDropWrapper from "./DragDropWrapper"
 import DropTarget from './DropTarget';
 import './BoxItem.css';
 
@@ -7,48 +7,51 @@ import './BoxItem.css';
     BoxItem - a thing that appears in a box, after you drag something into the box
 */
 
-export default function BoxItem(props) {
-
-
+export default class BoxItem extends React.Component {
+    // the things that appear in the boxes
+    constructor(props) {
+      super(props);
+    }
+    
     handleDrop = (e) => {
-        e.stopPropagation();
-        props.swap(e.dragData.index, props.index, e.dragData);
-        e.containerElem.style.visibility = "hidden";
+      e.stopPropagation();
+      this.props.swap(e.dragData.index, this.props.index, e.dragData);
+      e.containerElem.style.visibility="hidden";
     };
-
+  
     deleteMe = () => {
-        props.kill(props.uid);
+      this.props.kill(this.props.uid);
     };
+  
+    render() {
+      /*
+        Notice how these are wrapped in a DragDropWrapper (so you can drag them) AND
+        in a DropTarget (enabling you to rearrange items in the box by dragging them on
+        top of each other)
+      */
 
-
-    /*
-      Notice how these are wrapped in a DragDropWrapper (so you can drag them) AND
-      in a DropTarget (enabling you to rearrange items in the box by dragging them on
-      top of each other)
-    */
-
-    return (
+      return (
         <div className="box_item_component">
-            <DragDropWrapper
-                targetKey="boxItem"
-                dragData={{ label: props.children, index: props.index }}
-                onDrop={deleteMe}
-                disappearDraggedElement={true}
-                dragHandleClassName="grabber"
+          <DragDropWrapper
+              targetKey="boxItem"
+              dragData={{label: this.props.children, index: this.props.index}}
+              onDrop={this.deleteMe}
+              disappearDraggedElement={true}
+              dragHandleClassName="grabber"
             >
-                <DropTarget
-                    onHit={handleDrop}
-                    targetKey="boxItem"
-                >
-                    <div className="outer">
-                        <div className="item">
-                            <span className="grabber">&#8759;</span>
-                            {props.children}
-                        </div>
-                    </div>
-                </DropTarget>
-            </DragDropWrapper>
+              <DropTarget
+                onHit={this.handleDrop}
+                targetKey="boxItem"
+              >
+                <div className="outer">
+                  <div className="item">
+                    <span className="grabber">&#8759;</span>
+                    {this.props.children}
+                  </div>
+                </div>
+            </DropTarget>
+          </DragDropWrapper>
         </div>
-    );
-
-}
+      );
+    }
+  }
