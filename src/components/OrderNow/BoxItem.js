@@ -22,6 +22,7 @@ export default class BoxItem extends React.Component {
     deleteMe = () => {
       this.props.kill(this.props.uid);
     };
+    
   
     render() {
       /*

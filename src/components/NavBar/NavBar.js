@@ -16,7 +16,7 @@ export default function NavBar(props) {
         </li>,
         <li key={3}>
             <div className="navbar-item has-dropdown is-hoverable">
-                <a href="/order" className="navbar-link">
+                <a href="/ordernow" className="navbar-link">
                     Order Now
                 </a>
                 <div className="navbar-dropdown">

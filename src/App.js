@@ -10,7 +10,8 @@ import LogInForm from './components/LogInForm/LogInForm';
 import LogOut from './components/LogOut/LogOut';
 import Home from './components/Home/Home';
 import NavBar from './components/NavBar/NavBar';
-import CreateBowl from './components/OrderNow/CreateBowl'
+import CreateBowl from './components/OrderNow/CreateBowl';
+import OrderNow from './components/OrderNow/OrderNow';
 
 
 export default function App(props) {
@@ -188,6 +189,12 @@ export default function App(props) {
             path="/createbowl"
             render={(props) => {
               return <CreateBowl />;
+            }}
+          />
+          <Route
+            path="/ordernow"
+            render={(props) => {
+              return <OrderNow />;
             }}
           />
         </Switch>

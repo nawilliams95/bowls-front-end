@@ -10,6 +10,7 @@ import Sauces from './BowlComponents/Sauces';
 
 export default function CreateBowl(props) {
 
+    
     return (
         <div className="drag_things_to_boxes">
             <h1 className="title is-1">Create Bowl</h1>
