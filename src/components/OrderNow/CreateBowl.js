@@ -24,7 +24,7 @@ export default function CreateBowl(props) {
                     <Sauces />
                 </div>
                 <div className="boxes column is-one-third">
-                    <h3 className="title is-3">Your Bowl</h3>
+                    <h3 className="title is-3 h3">Your Bowl</h3>
                     <DragDropBox targetKey="box" />
                 </div>
             </div>

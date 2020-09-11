@@ -16,7 +16,7 @@
 .drag_things_to_boxes .highlighted .box {
 	box-shadow: inset 0 0 4px #00f;
 }
-h3 {
+.h3 {
 	position: relative;
     left: 130px;
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import LogOut from '../LogOut/LogOut';
 import './NavBar.css';
 
@@ -20,9 +21,9 @@ export default function NavBar(props) {
                     Order
                 </a>
                 <div className="navbar-dropdown">
-                    <a herf="/signaturebowls" className="navbar-item">
-                        Signature Better Bowls
-                    </a>
+                <Link to="/sigbowls" className="navbar-item"> 
+                Signature Better Bowls
+                    </Link>
                     <a href="/createbowl" className="navbar-item">
                         Custom Bowl Visualizer
                     </a>
@@ -64,7 +65,7 @@ export default function NavBar(props) {
                         alt="" style={{ width: '250px' }}
                     />
                 </a>
-                <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <a href='/home' role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>

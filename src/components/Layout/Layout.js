@@ -9,7 +9,7 @@ export default function Layout(props) {
             </div>
             <footer>
                 <div className="content has-text-centered">
-                    <p style={{ marginBottom: '30px', marginTop: '-25px' }}>
+                    <p style={{ marginBottom: '30px',}}>
                         <a href="/home">A Better Bowl for a Better Day&trade;</a>
                     </p>
                 </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 let endpoint = 'http://localhost:8000/api/bowls';
 
 export default function Show(props) {
@@ -15,7 +15,7 @@ export default function Show(props) {
                 console.error(e);
             }
         })();
-    },);
+    });
     const handleSubmit = async event => {
         event.preventDefault();
         try {
@@ -42,6 +42,7 @@ export default function Show(props) {
                 }
             });
             await updateBowl({});
+            console.log(response + 'was done')
             history.push('/yourbowls');
         } catch (error) {
             console.error(error);
@@ -52,74 +53,88 @@ export default function Show(props) {
     };
 
     return (
-        <div className="Page-wrapper">
-
-            <h1> Edit you bowl </h1>
+        <div className="Page-wrapper slogan is-family-primary has-text-centered has-text-weight-bold">
+            <div className="notification " style={{ fontSize: '25px' }}>
+                <strong><h1> Edit Bowl </h1></strong>
+            </div>
             {Object.keys(bowl).length > 0 ? (
                 <div>
                     <form onSubmit={handleSubmit} className="">
-                        <label htmlFor="base" id="base" >Base:</label>
-                        <p>chose from: rice, greens, or no base (must choose one)</p>
-                        <input
-                            type="text"
-                            name="base"
-                            id="base"
-                            value={bowl.base}
-                            onChange={handleChange}
-                        />
-                        <br />
-                        <label htmlFor="protein" id="protein" >Protein:</label>
-                        <p>chose from: chicken, steak, tofu, salmon, or no protien (must choose one)</p>
-                        <input
-                            type="text"
-                            name="protein"
-                            id="protein"
-                            value={bowl.protein}
-                            onChange={handleChange}
-                        />
-                        <br />
-                        <label htmlFor="sides" id="sides" >Sides:</label>
-                        <p>chose from: sweet potato, red cabbage, avocado, corn, beets, broccoli, no sides (must choose as least one)</p>
-                        <input
-                            type="text"
-                            name="sides"
-                            id="sides"
-                            value={bowl.sides}
-                            onChange={handleChange}
-                        />
-                        <br />
-                        <label htmlFor="toppings" id="toppings" >Toppings:</label>
-                        <p>chose from: bacon bits, bread crumbs, crispy parm, red peper flakes, or no toppings (must  choose at least one)</p>
-                        <input
-                            type="text"
-                            name="toppings"
-                            id="toppings"
-                            value={bowl.toppings}
-                            onChange={handleChange}
-                        />
-                        <br />
-                        <label htmlFor="sauce" id="sauce" >Sauce:</label>
-                        <p>chose from: white sauce, hot sauce, house sauce, spicy mayo, al sauce, or no sauce (must choose at least one)</p>
-                        <input
-                            type="text"
-                            name="sauce"
-                            id="sauce"
-                            value={bowl.sauce}
-                            onChange={handleChange}
-                        />
-                        <br />
-                        <button type="submit">Update Bowl</button>
+                        <div class="field">
+                            <lable htmlFor="base" id="base" >Base:</lable>
+                            <p className="help">chose from: rice, greens, or no base (must choose one)</p>
+                            <input
+                                type="text"
+                                name="base"
+                                id="base"
+                                value={bowl.base}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div class="field">
+                            <lable htmlFor="protein" id="protein" >Protein:</lable>
+                            <p className="help">chose from: chicken, steak, tofu, salmon, or no protien (must choose one)</p>
+                            <input
+                                type="text"
+                                name="protein"
+                                id="protein"
+                                value={bowl.protein}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div class="field">
+                            <lable htmlFor="sides" id="sides" >Sides:</lable>
+                            <p className="help">chose from: sweet potato, red cabbage, avocado, corn, beets, broccoli, no sides (must choose as least one)</p>
+                            <input
+                                type="text"
+                                name="sides"
+                                id="sides"
+                                value={bowl.sides}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div class="field">
+                            <lable htmlFor="toppings" id="toppings" >Toppings:</lable>
+                            <p className="help">chose from: bacon bits, bread crumbs, crispy parm, red peper flakes, or no toppings (must  choose at least one)</p>
+                            <input
+                                type="text"
+                                name="toppings"
+                                id="toppings"
+                                value={bowl.toppings}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div class="field">
+                            <lable htmlFor="sauce" id="sauce" >Sauce:</lable>
+                            <p className="help">chose from: white sauce, hot sauce, house sauce, spicy mayo, al sauce, or no sauce (must choose at least one)</p>
+                            <input
+                                type="text"
+                                name="sauce"
+                                id="sauce"
+                                value={bowl.sauce}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div class="control">
+                            <button type="submit" className="button is-info">Update Bowl</button>
+                        </div>
                     </form>
-                    <button className="control_button" onClick={deleteBowl}>
-                        Delete
+                    <p class="control">
+                        <button className="button is-danger" style={{ marginTop: '15px' }} onClick={deleteBowl}>
+                            Delete
                     </button>
+                    </p> 
+                    <div>
+                    <a className="button is-info is-light" href="/yourbowls" style={{ marginTop: '12px'}}>Back</a>
+                    </div>
                 </div>
             ) : (
                     <h1>Nothing found on {props.match.params.id}.</h1>
-                )}
-            <h3>
-                <Link to={'/yourbowls'}>Back</Link>
-            </h3>
-        </div>
+                )
+            }
+            
+               
+            
+        </div >
     )
 }
