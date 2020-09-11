@@ -20,7 +20,7 @@ export default function NavBar(props) {
                     Order
                 </a>
                 <div className="navbar-dropdown">
-                    <a herf="/signiturebowls" className="navbar-item">
+                    <a herf="/signaturebowls" className="navbar-item">
                         Signature Better Bowls
                     </a>
                     <a href="/createbowl" className="navbar-item">
@@ -40,7 +40,7 @@ export default function NavBar(props) {
     } else {
         navBarItems.push(
             <li key={5}>
-                <div className="navbar-end">
+                <div className="navbar-end" style={{marginTop: '15px'}}>
                     <div className="navbar-item auth">
                         <div className="buttons">
                             <a href="/signup" className="button is-info">

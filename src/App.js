@@ -15,6 +15,7 @@ import OrderNow from './components/OrderNow/OrderNow';
 import AboutUs from './components/AboutUs/AboutUs';
 import ContactUs from './components/ContactUs/ContactUs';
 import ContactUsForm from './components/ContactUs/ContactUsForm';
+import SigBowls from './components/OrderNow/SigBowls';
 
 export default function App(props) {
 
@@ -187,6 +188,12 @@ export default function App(props) {
               return <Home />;
             }}
           />
+          <Route
+            path="/signaturebowls"
+            render={(props) => {
+              return <SigBowls />
+            }}
+            />
           <Route
             path="/createbowl"
             render={(props) => {
