@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-let endpoint = 'http://localhost:8000/api/bowls';
+let endpoint = 'https://better-bowl-back.herokuapp.com/api/bowls';
 
 export default function Show(props) {
     const [bowl, updateBowl] = useState({});

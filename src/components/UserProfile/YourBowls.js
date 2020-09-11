@@ -17,7 +17,7 @@ export default function YourBowls(props) {
     useEffect(() => {
         (async () => {
             try {
-                const response = await fetch('http://localhost:8000/api/bowls');
+                const response = await fetch('https://better-bowl-back.herokuapp.com/api/bowls');
                 const data = await response.json();
                 updateAllBowls([...data]);
             } catch (e) {

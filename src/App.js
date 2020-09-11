@@ -116,7 +116,7 @@ export default function App(props) {
     event.preventDefault();
     // validate();
     try {
-      const response = await axios.post('http://localhost:8000/users/signup', {
+      const response = await axios.post('https://better-bowl-back.herokuapp.com/users/signup', {
         email: state.email,
         password: state.password,
         firstName: state.firstName,
@@ -139,7 +139,7 @@ export default function App(props) {
   const handleLogIn = async event => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/users/login', {
+      const response = await axios.post('https://better-bowl-back.herokuapp.com/users/login', {
         email: state.email,
         password: state.password
       });
