@@ -18,6 +18,7 @@ import ContactUsForm from './components/ContactUs/ContactUsForm';
 import Account from './components/UserProfile/Account';
 import YourBowls from './components/UserProfile/YourBowls';
 import Edit from './components/UserProfile/Edit';
+import SigBowls from './components/OrderNow/SigBowls';
 
 export default function App(props) {
 
@@ -191,6 +192,12 @@ export default function App(props) {
               return <Home />;
             }}
           />
+          <Route
+            path="/signaturebowls"
+            render={(props) => {
+              return <SigBowls />
+            }}
+            />
           <Route
             path="/createbowl"
             render={(props) => {

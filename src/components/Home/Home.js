@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 export default function Home (props) {
         return (
         <div>
@@ -9,22 +8,22 @@ export default function Home (props) {
                   <strong>How to Build a Better Bowl:</strong>
                 </div> 
                 <div class="tile is-ancestor" style={{justifyContent: 'space-around', margin: '30px 40px 20px 40px'}}>
-                    <article class="tile is-child box is-3" style={{backgroundColor: '#f5d2b1'}}>
+                    <article class="tile is-child box is-3 is-fluid" style={{backgroundColor: '#f5d2b1'}}>
                     <p class="subtitle">First, Choose a <strong>Base</strong>:</p>
                     <figure class="image is-4by3">
-                        <img src="https://i.imgur.com/Bz34tHp.jpg" alt="" style={{width: '75%', height: 'auto', marginLeft: '37px', borderRadius: '5%'}}/>
+                        <img src="https://i.imgur.com/Bz34tHp.jpg" alt="" style={{width: '75%', height: 'auto', borderRadius: '5%', margin: '0 40px 0 35px'}}/>
                     </figure>
                     </article>
                     <article class="tile is-child box is-3" style={{backgroundColor: '#cfd3d4'}}>
                     <p class="subtitle">Second, Choose a <strong>Protein</strong>:</p>
-                    <figure class="image is-4by3">
-                        <img src="https://i.imgur.com/OPGvzKD.jpg" alt="" style={{width: '75%', height: 'auto', marginLeft: '37px', borderRadius: '5%'}}/>
+                    <figure class="image is-centered is-4by3">
+                        <img src="https://i.imgur.com/OPGvzKD.jpg" alt="" style={{width: '75%', height: 'auto', margin: '0 40px 0 35px', borderRadius: '5%'}}/>
                     </figure>
                     </article>
                     <article class="tile is-child box is-3" style={{backgroundColor: '#cad4c9'}}>
                     <p class="subtitle">Third, Choose two <strong>Sides</strong>:</p>
                     <figure class="image is-4by3">
-                        <img src="https://i.imgur.com/U4Ulrbp.jpg" alt="" style={{width: '75%', height: 'auto', marginLeft: '37px', borderRadius: '5%'}}/>
+                        <img src="https://i.imgur.com/U4Ulrbp.jpg" alt="" style={{width: '75%', height: 'auto', margin: '0 40px 0 35px', borderRadius: '5%'}}/>
                     </figure>
                     </article>
                 </div>
@@ -32,13 +31,13 @@ export default function Home (props) {
                 <article class="tile is-child box is-4" style={{backgroundColor: '#f3e7c1'}}>
                     <p class="subtitle">Fourth, Choose a <strong>Topping</strong>:</p>
                     <figure class="image is-4by3">
-                        <img src="https://i.imgur.com/RRp17ye.jpg" alt="" style={{width: '75%', height: 'auto', marginLeft: '40px', borderRadius: '5%'}}/>
+                        <img src="https://i.imgur.com/RRp17ye.jpg" alt="" style={{width: '75%', height: 'auto', margin: '0 40px 0 35px', borderRadius: '5%'}}/>
                     </figure>
                     </article>
                     <article class="tile is-child box is-4" style={{backgroundColor: '#eca9a4'}}>
-                    <p class="subtitle">Lastly, Choose a <strong>Sauce</strong> and Enjoy:</p>
+                    <p class="subtitle" style={{fontSize: '20px'}}>Lastly, Choose a <strong>Sauce</strong>:</p>
                     <figure class="image is-4by3">
-                        <img src="https://i.imgur.com/Zqu8tkq.jpg" alt="" style={{width: '72%', height: 'auto', marginLeft: '50px', borderRadius: '5%', marginTop: '10px'}}/>
+                        <img src="https://i.imgur.com/Zqu8tkq.jpg" alt="" style={{width: '72%', height: 'auto', margin: '0 40px 0 35px', borderRadius: '5%'}}/>
                     </figure>
                     </article>
                 </div>

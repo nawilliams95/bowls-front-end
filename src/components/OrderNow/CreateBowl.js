@@ -13,10 +13,10 @@ export default function CreateBowl(props) {
     
     return (
         <div className="drag_things_to_boxes">
-            <h1 className="title is-1">Create Bowl</h1>
-            <p className="subtitle is-3">Drag ingrdients for the bowl to the "Your Bowl" box. </p>
+            <h1 className="title is-1" style={{textAlign: 'center'}}>Create Bowl</h1>
+            <p className="subtitle is-3" style={{textAlign: 'center'}}>Drag Ingredients to "Your Bowl" Box: </p>
             <div className="columns">
-                <div className="things_to_drag column is-two-thirds">
+                <div className="things_to_drag column is-two-thirds" style={{marginLeft: '50px'}}>
                     <Base />
                     <Protein />
                     <Sides />
