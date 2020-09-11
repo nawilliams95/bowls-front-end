@@ -58,7 +58,6 @@ export default function App(props) {
       isLoggedIn: false
     });
     history.push('/home');
-    updateEnter(false);
     localStorage.clear();
   };
 
@@ -130,6 +129,7 @@ export default function App(props) {
       localStorage.token = response.data.token;
       response.data.currentUser = localStorage.setItem('user', JSON.stringify(response.data.currentUser));
       setIsLoggedIn("true");
+      updateEnter(true);
       history.push('/home');
     } catch (err) {
       console.log(err);
@@ -146,7 +146,8 @@ export default function App(props) {
       localStorage.token = response.data.token;
       response.data.currentUser = localStorage.setItem('user', JSON.stringify(response.data.currentUser));
       setIsLoggedIn(true);
-      history.push('/');
+      updateEnter(true);
+      history.push('/home');
     } catch (error) {
       console.log(error);
     }
@@ -160,8 +161,8 @@ export default function App(props) {
   return (
     <Layout isLoggedIn={isLoggedIn}>
       {/* {enter === false && <SplashPage handleEnter={handleEnter} />} */}
-      {enter === true &&
-        <NavBar isLoggedIn={isLoggedIn} handleLogOut={handleLogOut} />}
+      
+        <NavBar isLoggedIn={isLoggedIn} handleLogOut={handleLogOut} />
       <div className="body">
         <Switch>
           <Route
@@ -199,16 +200,16 @@ export default function App(props) {
             }}
           />
           <Route
-            exact path="/home"
+            path="/home"
             render={(props) => {
-              return <Home handleEnter={handleEnter} />;
+              return <Home />;
             }}
           />
-           {enter === false && <Route
+          {enter === false && <Route
             exact path="/"
             render={(props) => {
               return <SplashPage handleEnter={handleEnter} />;
-            }} 
+            }}
           />}
           <Route
             path="/createbowl"
