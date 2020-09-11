@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import LogOut from '../LogOut/LogOut';
 import './NavBar.css';
 
@@ -15,14 +16,14 @@ export default function NavBar(props) {
             </a>
         </li>,
         <li key={3}>
-            <div class="navbar-item has-dropdown is-hoverable">
-                <a href="/ordernow" class="navbar-link">
+            <div className="navbar-item has-dropdown is-hoverable">
+                <a href="/ordernow" className="navbar-link">
                     Order
                 </a>
                 <div className="navbar-dropdown">
-                    <a herf="/signiturebowls" className="navbar-item">
-                        Signature Better Bowls
-                    </a>
+                <Link to="/sigbowls" className="navbar-item"> 
+                Signature Better Bowls
+                    </Link>
                     <a href="/createbowl" className="navbar-item">
                         Custom Bowl Visualizer
                     </a>
@@ -40,7 +41,7 @@ export default function NavBar(props) {
     } else {
         navBarItems.push(
             <li key={5}>
-                <div className="navbar-end">
+                <div className="navbar-end" style={{marginTop: '15px'}}>
                     <div className="navbar-item auth">
                         <div className="buttons">
                             <a href="/signup" className="button is-info">
@@ -57,14 +58,14 @@ export default function NavBar(props) {
     }
 
     return (
-        <nav class="navbar" role="navigation" aria-label="main navigation" style={{width: '100%'}}>
-            <div class="navbar-brand">
+        <nav className="navbar" role="navigation" aria-label="main navigation" style={{width: '100%'}}>
+            <div className="navbar-brand">
                 <a href="/home">
                     <img id="nav-logo" src="https://i.imgur.com/0Z61aZV.png"
                         alt="" style={{ width: '250px' }}
                     />
                 </a>
-                <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <a href='/home' role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>

@@ -345,7 +345,7 @@ DragDropWrapper.propTypes = {
   // if True, then dragging is turned off
   noDragging: PropTypes.bool,
 
-  // callbacks (optional):
+  // callbacks:
   onDrop: PropTypes.func,
   onDrag: PropTypes.func,
   onDragEnd: PropTypes.func,
