@@ -17,6 +17,7 @@ import ContactUs from './components/ContactUs/ContactUs';
 import ContactUsForm from './components/ContactUs/ContactUsForm';
 import Account from './components/UserProfile/Account';
 import YourBowls from './components/UserProfile/YourBowls';
+import Edit from './components/UserProfile/Edit';
 
 export default function App(props) {
 
@@ -232,6 +233,12 @@ export default function App(props) {
               return <YourBowls />
             }}
             />
+            <Route
+						path="/:id"
+						render={props => {
+							return <Edit {...props}/>;
+						}}
+					/>
         </Switch>
       </div>
     </Layout>
