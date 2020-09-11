@@ -58,6 +58,7 @@ export default function App(props) {
       isLoggedIn: false
     });
     history.push('/home');
+    updateEnter(false);
     localStorage.clear();
   };
 
@@ -146,7 +147,6 @@ export default function App(props) {
       response.data.currentUser = localStorage.setItem('user', JSON.stringify(response.data.currentUser));
       setIsLoggedIn(true);
       history.push('/');
-      updateEnter(false);
     } catch (error) {
       console.log(error);
     }
@@ -159,7 +159,7 @@ export default function App(props) {
 
   return (
     <Layout isLoggedIn={isLoggedIn}>
-      {enter === false && <SplashPage handleEnter={handleEnter}/>}
+      {/* {enter === false && <SplashPage handleEnter={handleEnter} />} */}
       {enter === true &&
         <NavBar isLoggedIn={isLoggedIn} handleLogOut={handleLogOut} />}
       <div className="body">
@@ -190,6 +190,7 @@ export default function App(props) {
             render={(props) => {
               return (
                 <LogInForm
+                  handleEnter={handleEnter}
                   isLoggedIn={isLoggedIn}
                   handleInput={handleInput}
                   handleLogIn={handleLogIn}
@@ -200,9 +201,15 @@ export default function App(props) {
           <Route
             exact path="/home"
             render={(props) => {
-              return <Home />;
+              return <Home handleEnter={handleEnter} />;
             }}
           />
+           {enter === false && <Route
+            exact path="/"
+            render={(props) => {
+              return <SplashPage handleEnter={handleEnter} />;
+            }} 
+          />}
           <Route
             path="/createbowl"
             render={(props) => {
