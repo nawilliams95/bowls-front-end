@@ -30,12 +30,12 @@ export default function SignUpForm(props) {
         {/* <div className="text-danger">{props.errors.email}</div> */}
         <div class='field' style={{ width: '400px', display: 'block', margin: '0 auto', marginTop: '20px' }}>
           <label htmlFor="password" class='label'>Password</label>
-          <input class='input' type="text" name="password" placeholder='Type Your Password Here' required onChange={props.handleInput} />
+          <input class='input' type="password" name="password" placeholder='Type Your Password Here' required onChange={props.handleInput} />
         </div>
         {/* <div className="text-danger">{props.errors.password}</div> */}
         <div class='field' style={{ width: '400px', display: 'block', margin: '0 auto', marginTop: '20px' }}>
           <label htmlFor="confirm_password" class='label'>Confirm Password</label>
-          <input class='input' type="text" name="confirm_password" placeholder='Type Your confirm_password Here' required onChange={props.handleInput} />
+          <input class='input' type="password" name="confirm_password" placeholder='Type Your confirm_password Here' required onChange={props.handleInput} />
         </div>
         {/* <div className="text-danger">{props.errors.confirm_password}</div> */}
         <div class='control' style={{ width: '400px', display: 'block', margin: '0 auto', marginTop: '30px', marginBottom: '30px' }}>

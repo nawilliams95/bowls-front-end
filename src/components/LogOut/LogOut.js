@@ -8,7 +8,7 @@ export default function LogOut(props) {
     <div className="navbar-end">
       <div className="navbar-item auth">
         <div className="buttons">
-        {localStorage.length > 0 && <strong>Welcome Back {user.name}!	&nbsp; &nbsp;</strong>} 
+        {localStorage.length > 0 && <><strong>Welcome Back {user.name}!	&nbsp; &nbsp; </strong><a href="/account">Acount &nbsp; &nbsp; </a></> }
           <form>
         <input value="Log Out" type="submit" onClick={props.handleLogOut} /></form>
         </div>

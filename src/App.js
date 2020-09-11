@@ -15,6 +15,8 @@ import OrderNow from './components/OrderNow/OrderNow';
 import AboutUs from './components/AboutUs/AboutUs';
 import ContactUs from './components/ContactUs/ContactUs';
 import ContactUsForm from './components/ContactUs/ContactUsForm';
+import Account from './components/UserProfile/Account';
+import YourBowls from './components/UserProfile/YourBowls';
 
 export default function App(props) {
 
@@ -120,6 +122,7 @@ export default function App(props) {
       });
       console.log(response);
       localStorage.token = response.data.token;
+      response.data.currentUser = localStorage.setItem('user', JSON.stringify(response.data.currentUser));
       setIsLoggedIn("true");
       history.push('/home');
     } catch (err) {
@@ -215,6 +218,18 @@ export default function App(props) {
             path="/contactusform"
             render={(props) => {
               return <ContactUsForm />
+            }}
+            />
+            <Route
+            path="/account"
+            render={(props) => {
+              return <Account />
+            }}
+            />
+            <Route
+            path="/yourbowls"
+            render={(props) => {
+              return <YourBowls />
             }}
             />
         </Switch>
